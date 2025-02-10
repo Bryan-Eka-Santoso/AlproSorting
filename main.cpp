@@ -4,7 +4,10 @@ using namespace std;
 
 int main()
 {
-    int menu;
+    int menu, temp;
+    int n = 1000000;
+    int arr[] = {};
+
     do {
         cout << "== Menu ==" << endl;
         cout << "1. Generate Angka" << endl;
@@ -27,8 +30,20 @@ int main()
 
             break;
             }
-            case 3:{
-
+            case 3:{            
+                for(int i = 0; i < n-1; i++){
+                    for(int j = i+1; j < n; j++){
+                        if(arr[i] > arr[j]){
+                            temp = arr[j];
+                            arr[j] = arr[i];
+                            arr[i] = temp;
+                        }
+                    }
+                }
+            
+                for(int k = 0; k < n; k++){
+                    cout << arr[k] << " ";
+                }
             break;
             }
             case 4:{
@@ -41,6 +56,5 @@ int main()
             }
         }
     } while(menu != 0);
-
     return 0;
 }
