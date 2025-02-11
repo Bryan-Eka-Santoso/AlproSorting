@@ -27,7 +27,23 @@ int main()
             break;
             }
             case 2:{
+                int minn=0;
+                for (int i = 0 ;i<10-1 ; i++){
+                    minn = i+1;
+                    for (int j = i+1;j<10;j++){
 
+                    if (arr[j]<arr[minn]){
+                    minn = j;
+                    }
+
+                    }
+                    if (arr[i]>arr[minn]){
+                        temp=arr[i];
+                        arr[i]=arr[minn];
+                        arr[minn] = temp;
+                    }
+
+                }
             break;
             }
             case 3:{            
@@ -47,11 +63,37 @@ int main()
             break;
             }
             case 4:{
+                int arr[10]={10,2,5,9,3,6,8,7,1,4};
+                int temp;
+                for (int i = 0;i<10-1;i++){
+                    for (int j = 0;j<10-i-1;j++){
+                        if (arr[j]>arr[j+1]){
+                        temp = arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=temp;
+                        }   
+                    }
+                }
 
             break;
             }
             case 5:{
-
+                for (int i = 0;i<10/2;i++){
+                    for (int j = i;j<10-1-i;j++){
+                        if (arr[j]>arr[j+1]){
+                            temp = arr[j];
+                            arr[j]=arr[j+1];
+                            arr[j+1]=temp;
+                        }
+                    }
+                    for (int j = 10-2-i;j>i;j--){
+                        if (arr[j-1]>arr[j]){
+                            temp = arr[j];
+                            arr[j]=arr[j-1];
+                            arr[j-1]=temp;
+                        }
+                    }
+                }
             break;
             }
         }
