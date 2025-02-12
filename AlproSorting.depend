@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1739371002 source:c:\users\brian\documents\materi kuliah s2\alprosorting\alprosorting\main.cpp
+	<iostream>
+	<fstream>
+	<ctime>
+
