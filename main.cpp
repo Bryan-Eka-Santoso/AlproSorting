@@ -5,8 +5,8 @@
 using namespace std;
 
 int menu, temp, backMenu;
-int n = 100000;
-int arr[100000];
+int n = 1000000;
+int arr[1000000];
 
 void simpanFile(){
     ofstream myFile;
@@ -67,7 +67,16 @@ void simpanDurasi(double duration, string nameSort, int n){
     ofstream myFile;
     myFile.open("duration.txt", ios::app);
     if (myFile.is_open()) {
-        myFile << nameSort << " ( " << n << " Data Numbers" << " ) " << ": " << duration << " Miliseconds" << endl;
+        myFile << nameSort << " ( " << n << " Data Numbers" << " ) " << ": " << duration << " Seconds" << endl;
+        myFile.close();
+    }
+}
+
+void addLine(){
+    ofstream myFile;
+    myFile.open("duration.txt", ios::app);
+    if (myFile.is_open()) {
+        myFile << endl << "---------- New Random Number ----------" << endl;
         myFile.close();
     }
 }
@@ -94,9 +103,14 @@ int main()
         switch(menu){
             case 1:{
                 do {
+                    clock_t start_time = clock();
                     simpanFile();
                     bacaFile();
+                     clock_t end_time = clock();
+                    // For seconds
+                    double duration = (double)(end_time - start_time) / CLOCKS_PER_SEC;
                     simpanFileRandom();
+                    addLine();
 
                     cout << "Generate Number: " << endl;
 
@@ -104,7 +118,9 @@ int main()
                         cout << arr[k] << " ";
                     }
 
-                    cout << endl << endl << "0. Back" << endl;
+                    cout << endl << endl;
+                    cout << "Generate Number: " << duration << " Seconds" << endl;
+                    cout << "0. Back" << endl;
                     cout << ">> ";
                     cin >> backMenu;
                 } while (backMenu != 0);
@@ -131,8 +147,8 @@ int main()
 
                     }
                     clock_t end_time = clock();
-                    // For milliseconds
-                    double duration = (double)(end_time - start_time) / CLOCKS_PER_SEC * 1000;
+                    // For Seconds
+                    double duration = (double)(end_time - start_time) / CLOCKS_PER_SEC;
 
                     cout << "Selection Sort: " << endl;
 
@@ -141,7 +157,7 @@ int main()
                     }
 
                     cout << endl << endl;
-                    cout << "Selection Sort took " << duration << " miliseconds" << endl;
+                    cout << "Selection Sort took " << duration << " Seconds" << endl;
                     simpanDurasi(duration, "Selection Sort", n);
                     cout << "0. Back" << endl;
                     cout << ">> ";
@@ -164,8 +180,8 @@ int main()
                         }
                     }
                     clock_t end_time = clock();
-                    // For milliseconds
-                    double duration = (double)(end_time - start_time) / CLOCKS_PER_SEC * 1000;
+                    // For Seconds
+                    double duration = (double)(end_time - start_time) / CLOCKS_PER_SEC;
 
                     cout << "Straight Selection Sort: " << endl;
 
@@ -174,7 +190,7 @@ int main()
                     }
 
                     cout << endl << endl;
-                    cout << "Bubble Sort took " << duration << " miliseconds" << endl;
+                    cout << "Bubble Sort took " << duration << " Seconds" << endl;
                     simpanDurasi(duration, "Straight Selection Sort", n);
                     cout << "0. Back" << endl;
                     cout << ">> ";
@@ -197,8 +213,8 @@ int main()
                         }
                     }
                     clock_t end_time = clock();
-                    // For milliseconds
-                    double duration = (double)(end_time - start_time) / CLOCKS_PER_SEC * 1000;
+                    // For Seconds
+                    double duration = (double)(end_time - start_time) / CLOCKS_PER_SEC;
 
 
                     cout << "Bubble Sort: " << endl;
@@ -208,7 +224,7 @@ int main()
                     }
 
                     cout << endl << endl;
-                    cout << "Bubble Sort took " << duration << " miliseconds" << endl;
+                    cout << "Bubble Sort took " << duration << " Seconds" << endl;
                     simpanDurasi(duration, "Bubble Sort", n);
                     cout << "0. Back" << endl;
                     cout << ">> ";
@@ -238,8 +254,8 @@ int main()
                         }
                     }
                     clock_t end_time = clock();
-                    // For milliseconds
-                    double duration = (double)(end_time - start_time) / CLOCKS_PER_SEC * 1000;
+                    // For Seconds
+                    double duration = (double)(end_time - start_time) / CLOCKS_PER_SEC;
 
 
                     cout << "Two Way Bubble Sort: " << endl;
@@ -249,7 +265,7 @@ int main()
                     }
 
                     cout << endl << endl;
-                    cout << "Two Way Bubble Sort took " << duration << " miliseconds" << endl;
+                    cout << "Two Way Bubble Sort took " << duration << " Seconds" << endl;
                     simpanDurasi(duration, "Two Way Bubble Sort", n);
                     cout << "0. Back" << endl;
                     cout << ">> ";

@@ -1,4 +1,6 @@
-Straight Selection Sort ( 100000 Data Numbers ) : 3420 Miliseconds
-Two Way Bubble Sort ( 100000 Data Numbers ) : 4169 Miliseconds
-Selection Sort ( 100000 Data Numbers ) : 3822 Miliseconds
-Bubble Sort ( 100000 Data Numbers ) : 4467 Miliseconds
+
+---------- New Random Number ----------
+Selection Sort ( 1000000 Data Numbers ) : 1270.37 Seconds
+Straight Selection Sort ( 1000000 Data Numbers ) : 1203.37 Seconds
+Bubble Sort ( 1000000 Data Numbers ) : 1259.86 Seconds
+Two Way Bubble Sort ( 1000000 Data Numbers ) : 1331.05 Seconds
